@@ -14,8 +14,7 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
 
 /*!
  * Bootswatch v4.1.1
@@ -4222,7 +4221,7 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3359375rem;
+  padding-top: 0.5459375rem;
   padding-bottom: 0.3359375rem;
   margin-right: 1rem;
   font-size: 1.09375rem;
@@ -9559,3 +9558,17 @@ th {
 .card-title, .card-header {
   color: inherit;
 }
+//my edits
+.carousel-caption h1 {
+  color:white;
+  font-size: 420%;
+}
+.item img {
+  width:100%;
+}
+
+.navbar-brand img{
+  height:30px;
+  min-height:30px;
+}
+
