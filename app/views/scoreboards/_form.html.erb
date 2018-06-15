@@ -1,0 +1,12 @@
+<%= simple_form_for @scoreboard do |f| %>
+  <%= f.input :eventdate, label: "Event Date", as: :date, start_year: Date.today.year - 5,
+                              end_year: Date.today.year + 5,
+                              order: [:month, :day, :year] %>
+  <%= f.input :bpecode, label: "Event Code", :required => true %>
+  <%= f.input :organization, :required => true %>
+  <%= f.input :description %>
+  <%= f.input :code, label: "Source Code" %>
+  <div class="text-center">
+    <%= f.button :submit, class: "btn-custom2" %>
+  </div>
+<% end %>
