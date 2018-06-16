@@ -1,5 +1,5 @@
 class ScoreboardsController < ApplicationController
-    before_action :find_scoreboard, only: [:show, :edit, :update, :destroy]
+    before_action :find_scoreboard, only: [:edit, :update, :destroy]
     def index
         @scoreboards = Scoreboard.all.order("created_at DESC")
     end

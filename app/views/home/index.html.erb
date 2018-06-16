@@ -18,13 +18,38 @@
 <div class="container"><br>
   <h3 class="text-muted">Searching for an online experience to WOW your audience? Our Professional Services team is here to help!</h3>
 </div>
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		  <div class="text-center">
+			<%=  fa_icon "line-chart big-icon align-center" %>
+			</div>
+			
+			<h3 class="text-center">Custom Scoreboards</h3>
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+		</div>
+		<div class="col-md-4">
+					  <div class="text-center">
+			<%=  fa_icon "laptop big-icon align-center" %>
+			</div>
+			<h3 class="text-center">Custom Giving Centers</h3>
+			<p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor.</p>
+		</div>
+		<div class="col-md-4">
+					  <div class="text-center">
+			<%=  fa_icon "line-chart big-icon align-center" %>
+			</div>
+			<h3 class="text-center">Custom Reporting and Analytics</h3>
+			<p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+		</div>
+	</div>
+</div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     
-    <% @scoreboards.each do |scoreboard| %>
-    <h2><%= link_to scoreboard.organization, scoreboard_path(scoreboard) %></h2>
-<% end %>
+    
 
-<%= link_to "Add Scoreboard", new_scoreboard_path %>

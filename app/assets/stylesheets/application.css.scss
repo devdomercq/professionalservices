@@ -14,8 +14,6 @@
  *= require_self
  */
 
-
-
 /*!
  * Bootswatch v4.1.1
  * Homepage: https://bootswatch.com
@@ -29,6 +27,16 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ @import "font-awesome";
+ @import 'animate';
+ @font-face {
+  src:url("https://dl.dropbox.com/s/g50aeo6w1mubovc/Neutraface2Text-Book.woff?dl=0");
+  font-family: "NTFB";
+}
+.fa-big-icon {
+    font-size: 220px;
+}
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600");
 :root {
   --blue: #007bff;
@@ -87,7 +95,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "NTFB", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3213,7 +3221,7 @@ input[type="button"].btn-block {
   opacity: 0;
 }
 
-.collapse:not(.show) {
+.collapse:not(.in) {
   display: none;
 }
 
@@ -9564,7 +9572,7 @@ th {
   font-size: 420%;
 }
 .item img {
-  width:100%;
+  width:98%;
 }
 
 .navbar-brand img{
@@ -9572,3 +9580,50 @@ th {
   min-height:30px;
 }
 
+//Hides double animation on page load
+ .wow {
+  visibility: hidden;
+}
+
+//Responsive flexy scoreboard images
+
+.sbimage {
+  max-width:100%;
+}
+
+.sbcell img {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .sbcell {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sbcell {
+    width: calc(100% / 3);
+  }
+}
+
+.sbcell {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .sbcell {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sbcell {
+    width: calc(33.3333% - 2rem);
+  }
+}

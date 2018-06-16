@@ -1,0 +1,10 @@
+
+
+
+ <% if current_user.try(:admin?) %>
+              <%= link_to "Add Scoreboard", new_scoreboard_path %>
+    <% else %>
+    <div class="container">
+      <h1>You don't belong here!</h1>
+    </div>
+  <% end %>
