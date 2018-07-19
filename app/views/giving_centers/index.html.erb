@@ -1,0 +1,85 @@
+<br><br><br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 offset-1">
+          <h3 class="text-info">Have you explored OneCause Giving Center stuff</h3>
+        </div>
+        <div class="col-md-6 offset-1">
+          <p class="lead">Giving Center Text
+          </p>
+        </div>
+    </div>
+</div>
+
+<!-- saving to  test sorting below 
+<% if @Giving_Centers.count == 0 %>
+    <h3>There are no Giving Centers available to display.</h3>
+<% else %>
+    <div class="grid">
+        <%  @Giving_Centers.each do |giving_center| %>
+            <div class="sbcell <%= giving_center.category.tr(" \t\r\n", '') %>">
+                <a href="/giving_centers/ <%= giving_center.id %>">
+                    <%= image_tag 'http://via.placeholder.com/1920x1080', :class => "scoreboard hvr-wobble hvr-shadow sbimage"
+                        %>
+                </a>
+                  <p><%= giving_center.description %></p>
+            </div>
+        <% end %>
+        
+    </div>
+<% end %>
+-->
+<div class="container text-center">
+<section class="filter-simple">
+  <div class="button-group round">
+    <button class="btn btn-secondary filter-simple-button is-active" data-filter="all">All</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="AnnualGala">Annual Gala</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="DonationOnly">Donation Only</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="GolfOuting">Golf Outing</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="SchoolEvent">School Event</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="Luncheons&Dinners">Luncheons & Dinners</button>
+    <button class="btn btn-secondary filter-simple-button" data-filter="GivingDay">Giving Day</button>
+  </div>
+ </div> 
+<% if @Giving_Centers.count == 0 %>
+    <h3>There are no Giving Centers available to display.</h3>
+<% else %>
+    <div class="grid">
+        <%  @Giving_Centers.each do |giving_center| %>
+            <div class="sbcell <%= giving_center.category.tr(" \t\r\n", '') %> filter-simple-item column column-block">
+                <a href="/giving_centers/ <%= giving_center.id %>">
+                    <%= image_tag 'http://via.placeholder.com/1920x1080', :class => "scoreboard hvr-wobble hvr-shadow sbimage"
+                        %>
+                </a>
+                  <p><%= giving_center.description %></p>
+            </div>
+        <% end %>
+        
+    </div>
+<% end %>
+
+</section>
+
+
+
+<script>
+// shows and hides filtered items
+$(".filter-simple-button").click(function() {
+  var value = $(this).attr('data-filter');
+  if(value === "all") {
+    $('.filter-simple-item').show('1000');
+  } else {
+    $(".filter-simple-item").not('.'+value).hide('3000');
+    $('.filter-simple-item').filter('.'+value).show('3000');
+  }
+});
+
+// changes active class on filter buttons
+$('.filter-simple-button').click(function () {
+  $(this).siblings().removeClass('is-active');
+  $(this).addClass('is-active');
+});
+
+
+</script>

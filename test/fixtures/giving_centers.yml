@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bpecode: MyString
+  organization: MyString
+  description: MyText
+  eventdate: MyText
+  category: MyString
+
+two:
+  bpecode: MyString
+  organization: MyString
+  description: MyText
+  eventdate: MyText
+  category: MyString

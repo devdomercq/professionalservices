@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <%= image_tag 'http://via.placeholder.com/1920x1080' %>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <div>
+
+          <h3><%= @Giving_Center.organization %></h3>
+          <h4<%= @Giving_Center.category %></h4>
+          <p><%= @Giving_Center.description %></p>
+          </div>    
+      </div>
+    </div>
+  </div>
+  <div class="links btn-group">
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+          <%= link_to "Edit", edit_giving_center_path(@Giving_Center), class: "btn btn-custom" %>
+          <%= link_to "Delete", giving_center_path(@Giving_Center), method: :delete, data: {
+              confirm: "Are you sure?"}, class: "btn btn-custom" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

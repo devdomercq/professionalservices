@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615232930) do
+ActiveRecord::Schema.define(version: 20180626231020) do
+
+  create_table "giving_centers", force: :cascade do |t|
+    t.string   "bpecode"
+    t.string   "organization"
+    t.text     "description"
+    t.text     "eventdate"
+    t.string   "category"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false

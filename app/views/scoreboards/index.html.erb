@@ -1,30 +1,30 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1" ></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag("faw-bg.jpg", :alt => "home image") %>
-      <div class="carousel-caption">
-        <h1 class="animated slideInLeft">Professional Services</h1>
-        <br>
-        <button type="button" class="btn btn-secondary">Learn More!</button>
-      </div>
+<br><br><br><div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 offset-1">
+      <h3 class="text-info">Have you explored OneCause Scoreboard slide offerings and want something a little more customized for your event?</h3>
     </div>
-  </div>
-</div>
-<div class="container"><br>
-  <h3 class="text-muted">Searching for an online experience to WOW your audience? Our Professional Services team is here to help!</h3>
-</div>
+    <div class="col-md-6 offset-1">
+      <p class="lead">Advanced Customization scoreboards include design consultation, graphic design work, and a finished product that will match the theme of your event.  
+      Our most common requests are to help make the donation appeal extra special, but we can also help you highlight multiple donation packages, 
+      dance competitions, or boxing matches.  If you have a special idea for your event, let's talk about how we can help you highlight it!
+      </p>
+    </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-    <% @scoreboards.each do |scoreboard| %>
-    <h2><%= link_to scoreboard.organization, scoreboard_path(scoreboard) %></h2>
+</div>
+</div>
+<% if @scoreboards.count == 0 %>
+    <h3>There are no scoreboards in this category.</h3>
+<% else %>
+    <div class="grid">
+        <%  @scoreboards.each do |scoreboard| %>
+            <div class="sbcell">
+                <a href="/scoreboards/ <%= scoreboard.id %>">
+                    <%= image_tag 'http://via.placeholder.com/1920x1080', class: "scoreboard hvr-wobble hvr-shadow sbimage"
+                        %>
+                </a>
+            </div>
+        <% end %>
+       
+    </div>
 <% end %>
 
-<%= link_to "Add Scoreboard", new_scoreboard_path %>
